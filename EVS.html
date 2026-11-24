@@ -1,0 +1,183 @@
+2<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Go Green: Smart Waste Classifier</title>
+<link rel="stylesheet" href="EVS.CSS">
+</head>
+<body>
+<nav><b>♻ Go Green</b><a href="#about">About</a><a href="#problem">Problem</a><a href="#how">How it works</a><a href="#solution">Solution</a><a href="#bins">Bins</a><a href="#journey">User journey</a><a href="#result">Result</a><a href="#value">Value</a><a href="#matters">Why it matters</a><a href="#limits">Limitations</a><a href="#future">Future</a></nav>
+
+<header class="hero"><div class="wrap">
+<div>
+<p class="uni" style="margin-top:0">Techno India University, West Bengal</p>
+<h1>Smart Waste <span>Classifier</span></h1>
+<p>AI-powered waste recognition for cleaner segregation and better recycling decisions.</p>
+<span class="badge">Project presentation</span>
+<p class="tags" style="margin-top:22px">AI • Computer Vision • Machine Learning</p>
+</div>
+<div class="card" style="background:#1d4a39;border-color:transparent;color:#fff">
+<p style="color:#a9c9b7;margin:0">Go Green app</p>
+<div class="grid" style="margin-top:14px">
+<div style="background:#1f6fe0;border-radius:12px;padding:14px 16px">ECO Wallet</div>
+<div style="background:#1f6fe0;border-radius:12px;padding:14px 16px">Impact</div>
+<div style="background:#fff;color:#0b1f4d;border-radius:12px;padding:14px 16px;font-weight:700">Create an account</div>
+<div style="border:2px solid #9cc2ff;border-radius:12px;padding:14px 16px">Login</div>
+</div>
+</div>
+</div></header>
+
+<section id="about"><div class="wrap">
+<h2>What is Go Green?</h2>
+<p class="sub">A simple idea: point, upload, dispose correctly.</p>
+<div class="grid g2" style="align-items:stretch">
+<div class="big"><h3>Take a photo of any waste item.</h3><h3>Go Green tells you what it is and how to dispose of it.</h3></div>
+<div class="grid">
+<div class="card"><div class="dot c-g">1</div><h3>Simple</h3><p>Just upload a photo.</p></div>
+<div class="card"><div class="dot c-b">2</div><h3>Quick</h3><p>The result appears right away.</p></div>
+<div class="card"><div class="dot c-a">3</div><h3>Helpful</h3><p>Disposal advice and an eco tip.</p></div>
+</div></div>
+</div></section>
+
+<section id="problem" style="background:var(--surface)"><div class="wrap">
+<h2>The real-world problem</h2>
+<p class="sub">Why ordinary waste disposal creates a chain of problems.</p>
+<div class="grid g4">
+<div class="card" style="background:var(--bg)"><div class="dot c-g">1</div><h3>Mixed waste</h3><p>Recyclable and non-recyclable items end up in the same bin.</p></div>
+<div class="card" style="background:var(--bg)"><div class="dot c-a">2</div><h3>Low awareness</h3><p>People may not know the right category or disposal method.</p></div>
+<div class="card" style="background:var(--bg)"><div class="dot c-r">3</div><h3>Contamination</h3><p>Wrongly sorted items reduce the value of recyclables.</p></div>
+<div class="card" style="background:var(--bg)"><div class="dot c-b">4</div><h3>Slow sorting</h3><p>Manual sorting is repetitive, slow and hard to scale.</p></div>
+</div>
+<div class="band"><em>The key gap:</em> show a waste photo, get an AI answer and a practical disposal tip.</div>
+</div></section>
+
+<section id="how"><div class="wrap">
+<h2>Project objective</h2>
+<p class="sub">Turn a waste image into an understandable, actionable result.</p>
+<ol class="steps">
+<li><strong>Upload</strong><span>Add a JPG or PNG photo.</span></li>
+<li><strong>Analyze</strong><span>A trained AI model studies the image.</span></li>
+<li><strong>Predict</strong><span>Shows the top category and confidence.</span></li>
+<li><strong>Guide</strong><span>Gives a disposal tip and an eco tip.</span></li>
+<li><strong>Learn</strong><span>Your feedback helps improve results.</span></li>
+</ol>
+<div class="band dark-band"><span style="color:var(--mint);margin-right:14px">Design principle</span>AI should support a human decision, not hide uncertainty.</div>
+
+</div></section>
+<section id="solution"><div class="wrap">
+<h2>Proposed solution</h2>
+<p class="sub">A simple app that turns a photo into clear guidance.</p>
+<div class="flow"><div class="card">Waste photo</div><i>→</i><div class="card">AI analysis</div><i>→</i><div class="card">Prediction</div><i>→</i><div class="card">Disposal advice</div></div>
+<div class="grid g2" style="margin-top:22px">
+<div class="card" style="background:var(--tint)"><h3 style="color:var(--green)">User flow</h3><p style="color:var(--ink);font-weight:700">Upload → Prediction → Confidence → Disposal guidance → Feedback</p></div>
+<div class="card" style="background:var(--tint2)"><h3 style="color:var(--blue)">Safety net</h3><p style="color:var(--ink);font-weight:700">If the AI is not sure, it says “uncertain” instead of guessing.</p></div>
+</div>
+</div></section>
+
+<section id="bins" style="background:var(--surface)"><div class="wrap">
+<h2>Which bin does it go in?</h2>
+<p class="sub">Examples of waste categories and where they belong. Pick a category.</p>
+<div class="tabs" role="tablist" aria-label="Waste categories" id="tabs"></div>
+<div class="bin" id="binCard" role="tabpanel" aria-live="polite" aria-label="Selected waste category"></div>
+<p class="note">Exact categories depend on the trained model and local disposal rules.</p>
+</div></section>
+
+<section id="journey"><div class="wrap">
+<h2>Real-world user journey</h2>
+<p class="sub">Example: a person finds an unknown waste item.</p>
+<ol class="steps">
+<li><strong>Take photo</strong><span>Capture an image of the item.</span></li>
+<li><strong>Upload</strong><span>The app checks it is a valid JPG or PNG.</span></li>
+<li><strong>AI predicts</strong><span>The AI returns a category and confidence.</span></li>
+<li><strong>Get guidance</strong><span>See a recommendation and an eco tip.</span></li>
+<li><strong>Feedback</strong><span>Confirm or correct the prediction.</span></li>
+</ol>
+<div class="band"><em>Result:</em> less guesswork at disposal time and a clear record of predictions.</div>
+</div></section>
+
+<section id="result" style="background:var(--surface)"><div class="wrap">
+<h2>What the user sees</h2>
+<p class="sub">The result is designed to be easy to understand. Drag the slider to see how low confidence turns into “uncertain”.</p>
+<div class="result">
+<div class="card" style="background:var(--bg)">
+<p>AI result</p>
+<div class="res-name" id="rn">Organic</div>
+<span class="conf" id="rc">82% confidence</span>
+<div class="meter"><div id="rm"></div></div>
+<label class="range-label" for="rs">Adjust confidence: <span id="rangeValue">82%</span></label><input type="range" min="10" max="99" value="82" id="rs" aria-label="Confidence">
+<p style="margin-top:16px"><b style="color:var(--ink)">Recommendation</b></p>
+<p id="rr" style="color:var(--ink);font-weight:700;font-size:19px">Place in the appropriate recyclable-waste stream.</p>
+</div>
+<div class="big"><h3 style="color:#fff;margin:0 0 16px">Key features</h3>
+<ul class="plain" style="line-height:2;font-size:18px"><li>Top prediction with confidence</li><li>“Uncertain” when confidence is low</li><li>Disposal recommendation</li><li>Eco tip for awareness</li><li>Feedback option for correction</li></ul></div>
+</div>
+</div></section>
+
+<section id="value"><div class="wrap">
+<h2>Real-world value</h2>
+<p class="sub">Where this idea can make a practical difference.</p>
+<div class="grid g3">
+<div class="card check"><div><h3>Homes and apartments</h3><p>Identify unfamiliar waste before disposal.</p></div></div>
+<div class="card check"><div><h3>Schools and colleges</h3><p>Show AI and sustainability in action.</p></div></div>
+<div class="card check"><div><h3>Recycling centers</h3><p>Support pre-sorting and cut contamination.</p></div></div>
+<div class="card check"><div><h3>Smart-bin projects</h3><p>Be the “eyes” of an automated bin.</p></div></div>
+<div class="card check"><div><h3>Municipal pilots</h3><p>Study waste patterns and user behavior.</p></div></div>
+</div>
+<div class="band dark-band" style="text-align:center">Better classification → better segregation → better recycling decisions</div>
+
+</div></section>
+<section id="matters"><div class="wrap">
+<h2>Why it matters</h2>
+<p class="sub">Small choices at the bin add up.</p>
+<div class="grid g3">
+<div class="card"><div class="dot c-g">1</div><h3>Environment</h3><ul class="plain"><li>Cleaner recycling streams</li><li>Less waste sent to landfill</li><li>Better value from recyclables</li></ul></div>
+<div class="card"><div class="dot c-b">2</div><h3>People</h3><ul class="plain"><li>Clear, instant guidance</li><li>Builds good everyday habits</li><li>Easy for anyone to use</li></ul></div>
+<div class="card"><div class="dot c-a">3</div><h3>Community</h3><ul class="plain"><li>Useful for schools and campuses</li><li>Shows how AI helps sustainability</li><li>Data to understand waste trends</li></ul></div>
+</div>
+<div class="band" style="text-align:center">Small daily choices add up to a cleaner campus, city and planet.</div>
+</div></section>
+
+<section id="limits" style="background:var(--surface)"><div class="wrap lim">
+<h2>Limitations and responsible use</h2>
+<p class="sub">What should be improved before large-scale use.</p>
+<div class="grid g3">
+<div class="card" style="background:var(--bg)"><h3>Training data matters</h3><p>The AI is only as good as the photos it learned from.</p></div>
+<div class="card warn" style="background:var(--bg)"><h3>Real-world conditions</h3><p>Poor light, odd angles, dirty or mixed items can confuse it.</p></div>
+<div class="card warn" style="background:var(--bg)"><h3>Confidence ≠ certainty</h3><p>A high score does not guarantee a correct answer.</p></div>
+</div>
+<div class="grid g2" style="margin-top:18px">
+<div class="card" style="background:var(--bg)"><h3>Data and privacy</h3><p>Uploaded images and records need safe storage and access control.</p></div>
+<div class="card" style="background:var(--bg)"><h3>Local rules</h3><p>A city rollout needs more categories and local disposal rules.</p></div>
+</div>
+<div class="band" style="text-align:center"><em>When the app is not sure, it says “uncertain” instead of guessing.</em></div>
+</div></section>
+
+<section id="future"><div class="wrap">
+<h2>Future scope</h2>
+<p class="sub">How the prototype can grow into a complete smart-waste platform.</p>
+<div class="grid g3">
+<div class="card"><div class="dot c-g">1</div><h3>Mobile app</h3><p>Camera-first experience for instant results.</p></div>
+<div class="card"><div class="dot c-g">2</div><h3>Smart bins</h3><p>Run the AI directly inside a bin.</p></div>
+<div class="card"><div class="dot c-g">3</div><h3>IoT sensors</h3><p>Add fill-level and weight sensors.</p></div>
+<div class="card"><div class="dot c-b">4</div><h3>Analytics</h3><p>Track waste trends and contamination.</p></div>
+<div class="card"><div class="dot c-b">5</div><h3>Municipal integration</h3><p>Link advice to local waste rules.</p></div>
+<div class="card"><div class="dot c-b">6</div><h3>Continuous learning</h3><p>Use reviewed feedback to improve the AI.</p></div>
+</div>
+</div></section>
+
+<section class="cta"><div class="wrap">
+<h2>Conclusion</h2>
+<p class="sub">A small AI decision at the bin can support a bigger environmental goal.</p>
+<div class="grid g3">
+<div class="card"><h3 style="color:var(--mint)">Recognize</h3><p>Computer vision turns a photo into a waste category.</p></div>
+<div class="card"><h3 style="color:#f0b878">Guide</h3><p>Recommendations turn the prediction into action.</p></div>
+<div class="card"><h3 style="color:#9db8ea">Improve</h3><p>Feedback creates a path for better results.</p></div>
+</div>
+<p style="margin-top:32px"><span class="badge">Thank you</span></p>
+</div></section>
+<footer>Go Green • Smart Waste Classifier • AI + Computer Vision • Techno India University, West Bengal</footer>
+
+<script src="EVS.JS" defer></script>
+</body>
+</html>
